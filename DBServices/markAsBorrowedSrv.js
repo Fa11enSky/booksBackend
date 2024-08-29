@@ -5,7 +5,7 @@ const bookPath = require("./booksPath");
 const { errorsCreator } = require("../helpers");
 
 const markAsBorrowedSrv = async (isbn, isBorrowed) => {
-  const books = await getBooksList(bookPath);
+  const books = await getBooksList();
   if (!books) {
     throw errorsCreator(500, "Read db error");
   }

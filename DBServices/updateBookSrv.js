@@ -5,7 +5,7 @@ const getBooksList = require("./getBooksListSrv");
 const bookPath = require("./booksPath");
 
 const updateBookSrv = async (isbn, updates) => {
-  const books = await getBooksList(bookPath);
+  const books = await getBooksList();
   if (!books) {
     throw errorsCreator(500, "error read db");
   }

@@ -5,7 +5,7 @@ const getBooksListSrv = require("./getBooksListSrv");
 const { errorsCreator } = require("../helpers");
 
 const addBookSrv = async (book) => {
-  const books = await getBooksListSrv(bookPath);
+  const books = await getBooksListSrv();
   if (!books) {
     throw errorsCreator(500, "Db read error");
   }
