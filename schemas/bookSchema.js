@@ -15,8 +15,11 @@ const updateBookSchema = Joi.object()
     title: Joi.string().min(2).max(50),
     author: Joi.string().min(2).max(50),
   });
-
+const updateIsBorrowed = Joi.object().keys({
+  isBorrowed:Joi.boolean().required()
+})
 module.exports = {
   createBookSchema,
   updateBookSchema,
+  updateIsBorrowed
 };
