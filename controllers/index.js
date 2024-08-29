@@ -4,6 +4,7 @@ const deleteBook = require("./books/deleteBook");
 const getAllBooks = require("./books/getAllBooks");
 const markAsBorrowed = require("./books/markAsBorrowed");
 const updateBook = require("./books/updateBook");
+const searchBooks = require('./books/searchBooks')
 
 module.exports = {
   addBook: controllerWrapper(addBook),
@@ -11,4 +12,5 @@ module.exports = {
   getAllBooks: controllerWrapper(getAllBooks),
   markAsBorrowed: controllerWrapper(markAsBorrowed),
   updateBook: controllerWrapper(updateBook),
+  searchBooks:controllerWrapper(searchBooks)
 };
