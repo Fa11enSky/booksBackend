@@ -1,4 +1,4 @@
-const markAsBorrowedSrv = require("../../DBServices/markAsBorrowedSrv")
+const { markAsBorrowedSrv } = require("../../DBServices")
 const { errorsCreator } = require("../../helpers")
 
 const markAsBorrowed = async(req,res) => {

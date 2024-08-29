@@ -1,6 +1,7 @@
 const fs = require("fs/promises");
+
 const { errorsCreator } = require("../helpers");
-const getBooksList = require("./getBooksList");
+const getBooksList = require("./getBooksListSrv");
 const bookPath = require("./booksPath");
 
 const updateBookSrv = async (isbn, updates) => {

@@ -6,8 +6,8 @@ const {
   addBook,
   markAsBorrowed,
 } = require("../controllers");
-const validateBody = require("../helpers/validateBody");
 const { updateBookSchema, createBookSchema, updateIsBorrowed } = require("../schemas/bookSchema");
+const { validateBody } = require("../helpers");
 
 const booksRouter = express.Router();
 

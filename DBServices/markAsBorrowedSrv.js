@@ -1,9 +1,10 @@
 const fs = require("fs/promises");
-const getBooksList = require("./getBooksList");
+
+const getBooksList = require("./getBooksListSrv");
 const bookPath = require("./booksPath");
 const { errorsCreator } = require("../helpers");
 
-const markAsBorrowedSrv = async (isbn,isBorrowed) => {
+const markAsBorrowedSrv = async (isbn, isBorrowed) => {
   const books = await getBooksList(bookPath);
   if (!books) {
     throw errorsCreator(500, "Read db error");
@@ -14,7 +15,6 @@ const markAsBorrowedSrv = async (isbn,isBorrowed) => {
     throw errorsCreator(404, "Book not found");
   }
 
-  
   books[idx].isBorrowed = isBorrowed;
 
   try {

@@ -1,15 +1,14 @@
 const fs = require("fs/promises");
 
 const bookPath = require("./booksPath");
-const { errorsCreator } = require("../helpers");
 
-const getBooksList = async () => {
+const getBooksListSrv = async () => {
   try {
     const books = await fs.readFile(bookPath);
     return JSON.parse(books);
-  } catch (error) { 
-    return null
+  } catch (error) {
+    return null;
   }
 };
 
-module.exports = getBooksList;
+module.exports = getBooksListSrv;
