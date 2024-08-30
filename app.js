@@ -1,7 +1,9 @@
 const express = require('express')
 const cors = require('cors');
+require("dotenv").config();
 const booksRouter = require('./routes/books');
 
+const { PORT } = process.env
 const app = express()
 
 app.use(cors());
@@ -18,4 +20,4 @@ app.use((err, req, res, next) => {
   res.status(status).json({ message });
 });
 
-app.listen(3000)
+app.listen(PORT)
